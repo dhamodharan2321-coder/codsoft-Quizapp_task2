@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #11998e, #38ef7d);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .result-box {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .score {
+            font-size: 28px;
+            margin: 20px 0;
+            color: #11998e;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #11998e;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+        }
+
+        a:hover {
+            background: #0e7c72;
+        }
+    </style>
+</head>
+<body>
+
+<div class="result-box">
+    <h1>🎉 Quiz Completed!</h1>
+
+    <div class="score">
+        Your Score: {{ score }} / {{ total }}
+    </div>
+
+    <a href="/quiz_list">Try Another Quiz</a>
+    <br><br>
+    <a href="/dashboard">Go to Dashboard</a>
+</div>
+
+</body>
+</html>

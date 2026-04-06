@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #667eea, #764ba2);
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        .question-box {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .option-box {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+
+        .option-box input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background: #667eea;
+            color: white;
+            border: none;
+            margin-top: 10px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Create Quiz 🎯</h2>
+
+    <form method="POST">
+
+        <input type="text" name="title" placeholder="Quiz Title" required>
+
+        <div id="questions">
+
+            <!-- First Question -->
+            <div class="question-box">
+                <input type="text" name="question[]" placeholder="Question" required>
+
+                <div class="option-box">
+                    <input type="radio" name="answer0" value="o1" required>
+                    <input type="text" name="o1[]" placeholder="Option 1" required>
+                </div>
+
+                <div class="option-box">
+                    <input type="radio" name="answer0" value="o2">
+                    <input type="text" name="o2[]" placeholder="Option 2" required>
+                </div>
+
+                <div class="option-box">
+                    <input type="radio" name="answer0" value="o3">
+                    <input type="text" name="o3[]" placeholder="Option 3" required>
+                </div>
+
+                <div class="option-box">
+                    <input type="radio" name="answer0" value="o4">
+                    <input type="text" name="o4[]" placeholder="Option 4" required>
+                </div>
+            </div>
+
+        </div>
+
+        <button type="button" onclick="addQuestion()">+ Add Question</button>
+        <br>
+        <button type="submit">Create Quiz</button>
+
+    </form>
+</div>
+
+<script>
+let count = 1;
+
+function addQuestion() {
+    let div = document.createElement("div");
+    div.classList.add("question-box");
+
+    div.innerHTML = `
+        <input type="text" name="question[]" placeholder="Question" required>
+
+        <div class="option-box">
+            <input type="radio" name="answer${count}" value="o1" required>
+            <input type="text" name="o1[]" placeholder="Option 1" required>
+        </div>
+
+        <div class="option-box">
+            <input type="radio" name="answer${count}" value="o2">
+            <input type="text" name="o2[]" placeholder="Option 2" required>
+        </div>
+
+        <div class="option-box">
+            <input type="radio" name="answer${count}" value="o3">
+            <input type="text" name="o3[]" placeholder="Option 3" required>
+        </div>
+
+        <div class="option-box">
+            <input type="radio" name="answer${count}" value="o4">
+            <input type="text" name="o4[]" placeholder="Option 4" required>
+        </div>
+    `;
+
+    document.getElementById("questions").appendChild(div);
+    count++;
+}
+</script>
+
+</body>
+</html>

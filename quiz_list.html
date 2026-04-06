@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 40px;
+            background: rgba(0,0,0,0.2);
+        }
+
+        .navbar h2 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        .quiz-card {
+            background: white;
+            color: black;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .quiz-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .btn {
+            padding: 8px 15px;
+            background: #ff7e5f;
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+        }
+
+        .btn:hover {
+            background: #e76a50;
+        }
+
+        .no-quiz {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 600px) {
+            .quiz-card {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <h2>Available Quizzes 📋</h2>
+    <a href="/dashboard" style="color:white; text-decoration:none;">Dashboard</a>
+</div>
+
+<div class="container">
+
+    {% if quizzes %}
+        {% for quiz in quizzes %}
+            <div class="quiz-card">
+                <div class="quiz-title">{{ quiz[1] }}</div>
+                <a href="/quiz/{{ quiz[0] }}" class="btn">Take Quiz</a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="no-quiz">
+            <h3>No quizzes available</h3>
+        </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

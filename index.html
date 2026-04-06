@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Maker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: white;
+            text-align: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 40px;
+            background: rgba(0,0,0,0.2);
+        }
+
+        .navbar h2 {
+            margin: 0;
+        }
+
+        .nav-links a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .hero {
+            margin-top: 100px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .buttons a {
+            padding: 12px 25px;
+            margin: 10px;
+            background: white;
+            color: #333;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .buttons a:hover {
+            background: #333;
+            color: white;
+        }
+
+        .features {
+            margin-top: 80px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .feature-box {
+            background: white;
+            color: black;
+            margin: 15px;
+            padding: 20px;
+            width: 250px;
+            border-radius: 10px;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding: 20px;
+            background: rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2>Quiz Maker 🎯</h2>
+        <div class="nav-links">
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+            <a href="/quiz_list">Take Quiz</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Create & Take Quizzes Easily</h1>
+        <p>Build your own quizzes or test your knowledge instantly!</p>
+
+        <div class="buttons">
+            <a href="/register">Get Started</a>
+            <a href="/quiz_list">Browse Quizzes</a>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <div class="features">
+        <div class="feature-box">
+            <h3>📝 Create Quiz</h3>
+            <p>Design your own quizzes with multiple choice questions.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>🎯 Take Quiz</h3>
+            <p>Attempt quizzes and test your knowledge instantly.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>📊 Instant Results</h3>
+            <p>Get your score immediately after submission.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Quiz Maker | Built with ❤️ using Flask</p>
+    </footer>
+
+</body>
+</html>
